@@ -28,7 +28,8 @@ autoload -Uz _zinit
 
 zinit load denysdovhan/spaceship-prompt
 zinit load zsh-users/zsh-syntax-highlighting
-zinit load desyncr/auto-ls
+
+(cat ~/.cache/wal/sequences &)
 
 export PATH=$HOME/.local/bin:$PATH
 alias vim=nvim
