@@ -34,3 +34,4 @@ zinit load zsh-users/zsh-syntax-highlighting
 export PATH=$HOME/.local/bin:$PATH
 alias vim=nvim
 alias config='/usr/bin/git --git-dir=/home/wurst/dotfiles --work-tree=/home/wurst'
+alias apt='sudo apt'

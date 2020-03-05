@@ -7,6 +7,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', {'do': './install --bin'}
 Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'nvie/vim-flake8'
+Plug 'jmcantrell/vim-virtualenv'
+" theme stuff
 Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
