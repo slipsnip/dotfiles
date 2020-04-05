@@ -11,7 +11,7 @@ autoload -U promptinit; promptinit
 prompt pure
 
 # use pywal for theming terminal
-(cat ~/.cache/wal/sequences &)
+# (cat ~/.cache/wal/sequences &)
 
 # Use modern completion system
 autoload -Uz compinit
@@ -35,9 +35,20 @@ alias config='/usr/bin/git --git-dir=/home/wurst/dotfiles --work-tree=/home/wurs
 alias apt='sudo apt'
 alias replua='rep.lua'
 alias emacs='emacs -nw'
+alias sz='source ~/.zshrc'
 
 export PATH=$HOME/.local/bin:$HOME/.luarocks/bin:$HOME/.emacs.d/bin:$PATH
-export EDITOR=kak
-export VISUAL=kak
+export EDITOR=vim
+export VISUAL=vim
+export FZF_DEFAULT_COMMAND='rg --files --hidden'
+export FZF_DEFAULT_OPS="--extended --preview='bat'"
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
