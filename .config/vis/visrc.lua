@@ -3,8 +3,7 @@ require('vis')
 -- plugins
 require('plugins/vis-filetype-settings')
 plugin_vis_open = require('plugins/vis-fzf-open/fzf-open')
-
-
+require('plugins/vis-ctags')
 -- global configuration options
 vis.events.subscribe(vis.events.INIT, function()
 	vis:command('set theme base16-eighties')
@@ -17,6 +16,7 @@ vis.events.subscribe(vis.events.WIN_OPEN, function(win)
 	vis:command('set show-newlines on')
 end)
 
+-- Plugin settings
 plugin_vis_open.fzf_path = "/usr/bin/fzf"
 
 -- Filetype modelines via vis-filetype-settings plugin
