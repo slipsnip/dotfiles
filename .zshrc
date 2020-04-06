@@ -53,3 +53,14 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
+
+# caniuse for quick access to global support list
+cani() {
+  local feats=$(~/.local/bin/ciu | sort -rn | fzf -m --ansi | sed -e 's/^.*%\ *//g' | sed -e 's/   .*//g')
+
+  if [[ $feats ]]; then
+    for feat in $(echo $feats)
+    do caniuse $feat
+    done
+  fi
+}
