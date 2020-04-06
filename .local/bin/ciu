@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
+# This was taken from https://sidneyliebrand.io/blog/combining-caniuse-with-fzf
+# All rights belong to Sidney Liebrand, Please checkout his awesome blog.
 
 require 'colorize'
 require 'json'
