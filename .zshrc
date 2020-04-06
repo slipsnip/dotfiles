@@ -36,6 +36,7 @@ alias apt='sudo apt'
 alias replua='rep.lua'
 alias emacs='emacs -nw'
 alias sz='source ~/.zshrc'
+alias sv='source venv/bin/activate'
 
 export PATH=$HOME/.local/bin:$HOME/.luarocks/bin:$HOME/.emacs.d/bin:$PATH
 export EDITOR=vim
