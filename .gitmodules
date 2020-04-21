@@ -1,0 +1,3 @@
+[submodule "/home/wurst/.tmux/plugins/tpm"]
+	path = /home/wurst/.tmux/plugins/tpm
+	url = git@github.com:tmux-plugins/tpm.git
