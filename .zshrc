@@ -35,8 +35,8 @@ alias config='/usr/bin/git --git-dir=/home/wurst/dotfiles --work-tree=/home/wurs
 alias apt='sudo apt'
 alias replua='rep.lua'
 alias emacs='emacs -nw'
-alias sz='source ~/.zshrc'
-alias sv='source venv/bin/activate'
+alias szsh='source ~/.zshrc'
+alias svenv='source venv/bin/activate'
 
 export PATH=$HOME/.local/bin:$HOME/.luarocks/bin:$HOME/.emacs.d/bin:$PATH
 export EDITOR=vim
@@ -63,4 +63,14 @@ cani() {
     do caniuse $feat
     done
   fi
+}
+
+# source given file otherwise if no argument use fzf to find hidden file to source
+s() {
+        if [[ -n $1 ]]
+        then
+                source $1
+        else
+                source `rg --files --hidden | fzf`
+        fi
 }
