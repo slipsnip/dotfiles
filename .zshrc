@@ -31,7 +31,7 @@ zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p
 zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
 
-alias config='/usr/bin/git --git-dir=/home/wurst/dotfiles --work-tree=/home/wurst'
+alias config='/usr/bin/git --git-dir=/home/wurst/.dotfiles --work-tree=/home/wurst'
 alias apt='sudo apt'
 alias replua='rep.lua'
 alias emacs='emacs -nw'
