@@ -38,9 +38,10 @@ alias emacs='emacs -nw'
 alias szsh='source ~/.zshrc'
 alias svenv='source venv/bin/activate'
 
-export PATH=$HOME/.local/bin:$HOME/.luarocks/bin:$HOME/.emacs.d/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.luarocks/bin:$PATH
 export EDITOR=vim
 export VISUAL=vim
+export TERMINAL="alacritty"
 export FZF_DEFAULT_COMMAND='rg --files --hidden'
 export FZF_DEFAULT_OPS="--extended --preview='bat'"
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
