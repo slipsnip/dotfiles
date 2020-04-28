@@ -44,10 +44,11 @@ keys = [
     Key([mod], "x", lazy.window.kill()),
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
+    Key([mod], "p", lazy.spawn("dmenu_run")),
     Key([mod], "r", lazy.spawncmd()),
 ]
 
-groups = [Group(i) for i in "asdfuiop"]
+groups = [Group(i) for i in [str(x) for x in range(1,9)]]
 
 for i in groups:
     keys.extend([
