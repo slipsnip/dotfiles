@@ -1,3 +1,3 @@
 #!/bin/sh
 picom &
-nitrogen --resore &
+nitrogen --restore &
