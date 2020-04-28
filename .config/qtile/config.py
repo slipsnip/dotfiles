@@ -47,7 +47,7 @@ keys = [
     Key([mod], "x", lazy.window.kill()),
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
-    Key([mod], "p", lazy.spawn("dmenu_run")),
+    Key([mod], "p", lazy.spawn("rofi -show run")),
     Key([mod], "r", lazy.spawncmd()),
 ]
 
@@ -82,7 +82,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font='Hack Nerd Font Mono',
+    font='Hack',
     fontsize=18,
     padding=6,
 )
