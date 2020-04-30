@@ -5,18 +5,17 @@ SAVEHIST=1000
 
 # set options
 unsetopt beep
+setopt extended_glob
 bindkey -v
 
+# use pure prompt git@github.com:sindresorhus/pure
 autoload -U promptinit; promptinit
 prompt pure
 
-# use pywal for theming terminal
-# (cat ~/.cache/wal/sequences &)
-
 # Use modern completion system
-autoload -Uz compinit
-compinit
+autoload -Uz compinit; compinit
 
+# Completion settings
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
@@ -31,13 +30,13 @@ zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p
 zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
 
+# aliases
 alias config='/usr/bin/git --git-dir=/home/wurst/.dotfiles --work-tree=/home/wurst'
 alias apt='sudo apt'
 alias replua='rep.lua'
-alias emacs='emacs -nw'
-alias szsh='source ~/.zshrc'
-alias svenv='source venv/bin/activate'
+alias installit='pacman -Sl | fzf | awk '{ print $2 }' | xargs -L 1 -n 1 sudo pacman -S --noconfirm'
 
+# environment
 export PATH=$HOME/.local/bin:$HOME/.luarocks/bin:$PATH
 export EDITOR=vim
 export VISUAL=vim
@@ -46,6 +45,7 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden'
 export FZF_DEFAULT_OPS="--extended --preview='bat'"
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 
+# for nvm
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -56,6 +56,8 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
         eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 # caniuse for quick access to global support list
+# https://sidneyliebrand.io/blog/combining-caniuse-with-fzf
+# gem install cani (ruby)
 cani() {
   local feats=$(~/.local/bin/ciu | sort -rn | fzf -m --ansi | sed -e 's/^.*%\ *//g' | sed -e 's/   .*//g')
 
