@@ -43,7 +43,7 @@ keys = [
     Key([mod], "space", lazy.next_layout()),
     Key([mod, "shift"], "space", lazy.layout.rotate()),
     Key([mod, "shift"], "Return", lazy.layout.toggle_split()),
-    Key([mod], "Return", lazy.spawn("alacritty")),
+    Key([mod], "Return", lazy.spawn("st")),
     Key([mod], "x", lazy.window.kill()),
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
@@ -82,7 +82,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font='Hack',
+    font='Hack Nerd Font Mono',
     fontsize=18,
     padding=6,
 )
