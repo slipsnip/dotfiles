@@ -3,19 +3,18 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
-# set options
+
+# options
 unsetopt beep
 setopt extended_glob
 bindkey -v
 
-# use pure prompt git@github.com:sindresorhus/pure
+# pure prompt git@github.com:sindresorhus/pure
 autoload -U promptinit; promptinit
 prompt pure
 
-# Use modern completion system
+# completion
 autoload -Uz compinit; compinit
-
-# Completion settings
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
@@ -32,30 +31,19 @@ zstyle ':completion:*' verbose true
 
 # aliases
 alias config='/usr/bin/git --git-dir=/home/wurst/.dotfiles --work-tree=/home/wurst'
-alias apt='sudo apt'
-alias replua='rep.lua'
-alias installit='pacman -Sl | fzf | awk '{ print $2 }' | xargs -L 1 -n 1 sudo pacman -S --noconfirm'
+alias ls='exa --long'
+alias tmux='tmux -2'
+alias st="tabbed -r 2 st -w ''"
 
-# environment
-export PATH=$HOME/.local/bin:$HOME/.luarocks/bin:$PATH
-export EDITOR=vim
-export VISUAL=vim
-export TERMINAL="alacritty"
-export FZF_DEFAULT_COMMAND='rg --files --hidden'
-export FZF_DEFAULT_OPS="--extended --preview='bat'"
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+
+# rice
+zle -N neo{,}
+bindkey '^n' neo
 
 # for nvm
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-        eval "$("$BASE16_SHELL/profile_helper.sh")"
-
-# caniuse for quick access to global support list
 # https://sidneyliebrand.io/blog/combining-caniuse-with-fzf
 # gem install cani (ruby)
 cani() {
@@ -76,4 +64,9 @@ s() {
         else
                 source `rg --files --hidden | fzf`
         fi
+}
+
+neo() {
+        neofetch
+        zle redisplay
 }
