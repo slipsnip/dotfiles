@@ -1,0 +1,22 @@
+
+xmonad.hs:10:1: error:
+    Could not find module ‘XMonad’
+    Perhaps you meant DsMonad (needs flag -package-key ghc-8.8.3)
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+10 | import XMonad
+   | ^^^^^^^^^^^^^
+
+xmonad.hs:13:1: error:
+    Could not find module ‘Xmonad.Util.SpawnOnce’
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+13 | import Xmonad.Util.SpawnOnce
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:15:1: error:
+    Could not find module ‘XMonad.StackSet’
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+15 | import qualified XMonad.StackSet as W
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
