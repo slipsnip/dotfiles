@@ -3,7 +3,6 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
-
 # options
 unsetopt beep
 setopt extended_glob
@@ -31,9 +30,10 @@ zstyle ':completion:*' verbose true
 
 # aliases
 alias config='/usr/bin/git --git-dir=/home/wurst/.dotfiles --work-tree=/home/wurst'
-alias ls='exa --long'
+alias lsd='exa --long'
 alias tmux='tmux -2'
 alias st="tabbed -r 2 st -w ''"
+alias hc='herbstclient'
 
 
 # rice

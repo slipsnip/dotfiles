@@ -1,4 +1,5 @@
 #!/bin/sh
-picom --focus-exclude "x = 0 && y = 0 && override_redirect = true" &
+picom &
 nitrogen --restore &
-exec $(ssh-agent -s) &
+xrdb ~/.Xresources
+~/.dwm/bar.sh

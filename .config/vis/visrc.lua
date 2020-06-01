@@ -1,12 +1,12 @@
 -- load standard vis module, providing parts of the Lua API
 require('vis')
 -- plugins
-require('plugins/vis-filetype-settings')
+require('plugins/vis-filetype-settings/vis-filetype-settings')
 plugin_vis_open = require('plugins/vis-fzf-open/fzf-open')
-require('plugins/vis-ctags')
+require('plugins/vis-ctags/ctags')
 -- global configuration options
 vis.events.subscribe(vis.events.INIT, function()
-	vis:command('set theme base16-eighties')
+	vis:command('set theme gruvbox')
 end)
 
 -- per window configuration options 

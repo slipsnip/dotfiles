@@ -1,5 +1,5 @@
 configuration {
-        theme: "wursted";
+        theme: "gruvbox-dark";
 	modi: "window,run";
 	width: 25;
 /*	lines: 15;*/
@@ -11,7 +11,7 @@ configuration {
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/
 /*	fixed-num-lines: true;*/
-/*	show-icons: false;*/
+	show-icons: true;
 /*	terminal: "rofi-sensible-terminal";*/
 /*	ssh-client: "ssh";*/
 /*	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
@@ -144,3 +144,4 @@ configuration {
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 }
+@import "/usr/share/rofi/themes/gruvbox-dark-soft.rasi"

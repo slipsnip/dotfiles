@@ -51,34 +51,30 @@ keys = [
     Key([mod], "r", lazy.spawncmd()),
 ]
 
-groups = [Group(i) for i in [str(x) for x in range(1,9)]]
+# groups = [Group(i) for i in [str(x) for x in range(1,9)]]
+groups = [
+        Group('work'), 
+        Group('alt'),
+        Group('music'),
+        Group('chat'),
+        Group('email'),
+        Group('misc')]
 
-for i in groups:
+for group in groups:
     keys.extend([
-        # mod1 + letter of group = switch to group
-        Key([mod], i.name, lazy.group[i.name].toscreen()),
-
-        # mod1 + shift + letter of group = switch to & move focused window to group
-        Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True)),
-        # Or, use below if you prefer not to switch to that group.
-        # # mod1 + shift + letter of group = move focused window to group
-        # Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
+        # switch to group
+        Key([mod], str(groups.index(group) + 1), lazy.group[group.name].toscreen()),
+        # switch to & move focused window to group
+        Key([mod, "shift"], str(groups.index(group) + 1), lazy.window.togroup(group.name, switch_group=True)),
     ])
 
 layouts = [
     layout.MonadTall(),
     layout.Max(),
-    # layout.Stack(num_stacks=5),
-    # Try more layouts by unleashing below layouts.
-    # layout.Bsp(),
     layout.Columns(),
     layout.Matrix(),
-    # layout.MonadWide(),
-    # layout.RatioTile(),
     layout.Tile(),
     layout.TreeTab(),
-    # layout.VerticalTile(),
-    # layout.Zoomy(),
 ]
 
 widget_defaults = dict(

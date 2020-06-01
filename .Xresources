@@ -7,6 +7,15 @@ st.alpha: 0.95
 ! st.termname: st-256color
 ! st.borderpx: 2
 
+URxvt.font: xft:Hack Nerd Font Mono:style=Regular:size=10
+URxvt.scrollBar: false
+URxvt.perl-ext-common: clipboard,default,matcher
+URxvt.clipboard.autocopy: true
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+
 !! Set the background, foreground and cursor colors as below:
 *.background: #1d2021
 *.foreground: #8ec07c
