@@ -9,7 +9,7 @@ st.alpha: 0.95
 
 URxvt.font: xft:Hack Nerd Font Mono:style=Regular:size=10
 URxvt.scrollBar: false
-URxvt.perl-ext-common: clipboard,default,matcher
+URxvt.perl-ext-common: clipboard,default,matcher,resize-font,-searchable-scrollback
 URxvt.clipboard.autocopy: true
 URxvt.keysym.M-c: perl:clipboard:copy
 URxvt.keysym.M-v: perl:clipboard:paste
