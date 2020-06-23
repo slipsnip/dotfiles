@@ -29,7 +29,7 @@ zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
 
 # aliases
-alias config='/usr/bin/git --git-dir=/home/wurst/.dotfiles --work-tree=/home/wurst'
+alias cfg='/usr/local/bin/git --git-dir=/home/wurst/.dotfiles --work-tree=/home/wurst'
 alias lsd='exa --long'
 alias tmux='tmux -2'
 alias st="tabbed -r 2 st -w ''"

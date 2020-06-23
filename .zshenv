@@ -1,4 +1,6 @@
 # environment
+eval `keychain --eval --agents ssh id_rsa`
+
 export PATH=$HOME/.local/bin:$HOME/.emacs.d/bin:$HOME/.luarocks/bin:$PATH
 export EDITOR=vim
 export VISUAL=code-oss
