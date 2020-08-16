@@ -34,7 +34,7 @@ alias lsd='exa --long'
 alias tmux='tmux -2'
 alias st="tabbed -r 2 st -w ''"
 alias hc='herbstclient'
-
+alias nnn='nnn -c'
 
 # rice
 zle -N neo{,}
